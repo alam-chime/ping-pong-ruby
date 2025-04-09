@@ -8,7 +8,7 @@ $ docker build -t ping-pong-ruby:single-stage .
 
 ### 2. Run/test the app
 ```
-$ docker run -d --name single-stage --rm -p 3000:3000 ping-pong-ruby:single-stage
+$ docker run --name single-stage --rm -p 3000:3000 ping-pong-ruby:single-stage
 $ curl http://localhost:3000/ping
 $ docker stop single-stage
 ```
@@ -26,7 +26,7 @@ $ docker sbom ping-pong-ruby:single-stage
 ### 5. Scan a container image using wiz (request access [here](https://go/request-access/Wiz+Read+Only) if you do not have it)
 ```
 wizcli auth --use-device-code
-wizcli docker scan --image ping-pong-ruby:some-tag
+wizcli docker scan --image ping-pong-ruby:single-stage
 ```
 
 ### 6. Change to a multi-stage build
